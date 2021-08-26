@@ -13,3 +13,28 @@ function toJadenCase($string)
      return ucwords( $string );
    }
 }
+
+<!-- Second Solution-->
+
+use function ucwords as toJadenCase;
+
+<!-- Third Solution -->
+
+function toJadenCase($string) 
+{
+   $new_string = [];
+   $words = explode(" ", $string);
+   foreach($words as $str)
+   {
+     $new_string[] = ucfirst($str);
+   }
+   return implode($new_string," ");
+}
+
+<!-- fourth solution -->
+
+function toJadenCase($string)
+{
+    return implode(' ', array_map(function($item){ return ucfirst($item);},explode(' ',$string)));
+}
+
